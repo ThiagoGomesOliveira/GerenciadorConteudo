@@ -149,6 +149,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Validacao.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,6 +166,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Paginas\Index.cshtml" />
     <Content Include="Views\Paginas\Novo.cshtml" />
+    <Content Include="Views\Paginas\Editar.cshtml" />
+    <Content Include="Views\Paginas\Preview.cshtml" />
+    <Content Include="Views\Shared\_Render.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

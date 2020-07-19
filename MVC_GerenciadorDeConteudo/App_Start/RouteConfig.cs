@@ -42,10 +42,26 @@ namespace MVC_GerenciadorDeConteudo
                 "paginas/criar",
                 new { controller = "Paginas", action = "Criar" });
 
+            
             routes.MapRoute(
                 "paginas_editar",
                 "paginas/{id}/Editar",
-                new { controller = "Paginas", action = "Editar" });
+                new { controller = "Paginas", action = "Editar" , id = 0 });
+
+            routes.MapRoute(
+                "paginas_alterar",
+                "paginas/{id}/Alterar",
+                new { controller = "Paginas", action = "Alterar", id = 0 });
+
+            routes.MapRoute(
+                "paginas_excluir",
+                "paginas/{id}/excluir",
+                new {controller = "Paginas", action = "Excluir", id = 0});
+
+            routes.MapRoute(
+                "paginas_preview",
+                "paginas/{id}/preview",
+                new {controller = "Paginas" , action = "Preview" , id = 0 });
 
             routes.MapRoute(
                 name: "Default",

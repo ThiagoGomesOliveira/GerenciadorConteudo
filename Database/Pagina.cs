@@ -54,7 +54,7 @@ namespace Database
         {
             using (var connection = new SqlConnection(SqlConn()))
             {
-                var query = $"SELECT * FROM PAGINAS WHERE = {id}";
+                var query = $"SELECT * FROM PAGINAS WHERE Id = {id}";
                 var comand = new SqlCommand(query, connection);
                 comand.Connection.Open();
 
@@ -64,6 +64,17 @@ namespace Database
                 var table = new DataTable();
                 adapter.Fill(table);
                 return table;
+            }
+        }
+
+        public void Excluir(int id)
+        {
+            using (var connection = new SqlConnection(SqlConn()))
+            {
+                var query = $"Delete from Paginas where id = {id}";
+                var command = new SqlCommand(query,connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
             }
         }
     }

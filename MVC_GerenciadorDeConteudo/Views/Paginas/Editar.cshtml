@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+    Business.Pagina pagina = ViewBag.Pagina;
+}
+
+<h2>Editando</h2>
+
+<div> <a href="/Paginas" class="btn btn-default" >Voltar</a> </div>
+
+<form action="/Paginas/@pagina.Id/Alterar" method="post">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="@pagina.Nome">
+    </div>
+    <div class="form-group">
+        <label for="data">Data</label>
+        <input type="datetime" class="form-control" id="data" name="data" value="@pagina.Data">
+    </div>
+    <div class="form-group">
+        <label for="conteudo">Conteudo</label>
+        <script src="https://cdn.tiny.cloud/1/7mvsy2fa3gqrr2un7rsxmrgxmjp6cu2yem1yoijvf70uq9ej/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>tinymce.init({selector:'textarea'});</script>
+
+        <textarea class="form-control" id="conteudo" name="conteudo">@pagina.Conteudo</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+

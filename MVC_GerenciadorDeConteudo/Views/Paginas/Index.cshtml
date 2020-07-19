@@ -1,29 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Páginas";
+    ViewBag.Title = "Cadastro de páginas";
     List<Business.Pagina> paginas = ViewBag.Paginas;
 }
 
 <div class="jumbotron">
-    <h3>Páginas</h3>
 
+
+    @{ if (TempData["Sucesso"] != null)
+        {
+            <div class="alert alert-success">@TempData["Sucesso"]</div>
+        }
+
+        if (TempData["Erro"] != null)
+        {
+            <div class="alert alert-danger">@TempData["Erro"]</div>
+        }
+    }
+    <h3>Páginas</h3>
     <div> <a href="/Paginas/Novo" class="btn btn-primary">Novo</a> </div>
     <table class="table">
         <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>Data</th>
+            <th>Render</th>
+            <th></th>
             <th></th>
         </tr>
         @{ foreach (var item in paginas)
             {
 
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Nome</td>
-                    <td>@item.Data</td>
-                    <td> <a href="/paginas/@item.Id/Editar" class="btn btn-primary">Editar</a> </td>
-                </tr>
-            }}
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nome</td>
+            <td>@item.Data</td>
+            <td> <a href="/paginas/@item.Id/Preview" class="btn btn-warning">Preview</a></td>
+            <td> <a href="/paginas/@item.Id/Editar" class="btn btn-primary">Editar</a> </td>
+            <td> <a href="/paginas/@item.Id/Excluir" class="btn btn-danger" onclick="ValidarExclusao(event)">Excluir</a> </td>
+        </tr>
+        }}
 
     </table>
 
